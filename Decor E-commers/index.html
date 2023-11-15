@@ -4,38 +4,44 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="./styles/index.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,300&display=swap" rel="stylesheet">
     <title>MY DECORE</title>
   </head>
 
   <body>
+    <!-- Navbar -->
     <nav class="navbar">
+      <a href="#" class="brand">MY<span>DECORE</span></a>
       <div class="nav-item">
-        <a href="" id="colection"></a>
-        <a href="" id="shop"></a>
-        <a href="" id="about"></a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="">Wishlist</a>
+        <a href="">Collection</a>
+        <a href="">Login</a>
       </div>
-      <p class="brand">MY DECORE</p>
-      <div class="nav-item-sec">
-        <a href="" id="wishlist"></a>
-        <a href="" id="login"></a>
-        <a href="" id="bag"></a>
+      <div class="nav-icons">
+        <button id="humberger-menu" onclick="menu()"><i data-feather="menu"></i></button>
       </div>
     </nav>
-    <div class="menu-toggle">
-      <span class="material-symbols-outlined">menu</span>
-    </div>
-    <section class="hero">
-      <h1 class="text">PRODUCTS FOR THE SOUL</h1>
-      <p id="text2">Breating new life into cultural craft</p>
-      <a href="" id="btn">Shop Now</a>
+    <!-- End Navbar -->
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>PRODUCTS FOR THE SOUL</h1>
+        <p>Breathing new life into cultural craft</p>
+        <a href="" class="btn">Shop now</a>
+      </main>
     </section>
+
+
+
+    
+    <script>
+      feather.replace();
+    </script>
     <script src="./js/index.js"></script>
   </body>
-
 </html>

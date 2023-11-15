@@ -1,208 +1,167 @@
 :root {
   --primary: #fdf8f3;
   --secondary: #7d7d7d;
-  --button: #191919;
+  --bg: #191919;
   --font: "Clash Grotesk", sans-serif;
+  --vsmall: 0.5rem;
+  --small: 1rem;
+  --medium: 1.5rem;
+  --big: 2rem;
+  --cummon: #6d8d62;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
   width: 100%;
-  background: linear-gradient(to right, rgba(32, 32, 32, 0.5), rgba(1, 0, 0, 0.2)), url(../images/plate.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  font-family: var(--font);
-  overflow-y: hidden;
-  overflow-x: hidden;
+  background-color: var(--bg);
+  /* height: 2000px; */
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 1rem 7%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
 }
 
-.nav-item a {
-  margin: 20px;
-  text-decoration: none;
-  color: var(--primary);
-}
-
-.nav-item a:hover {
-  color: var(--button);
-}
-
-.brand {
-  font-size: 24px;
-  text-align: center;
+.navbar .brand {
+  color: #F5EEC8;
   font-weight: 700;
+  font-family: var(--font);
+  font-size: var(--medium);
+}
+
+.navbar .brand span {
+  color: #A7D397;
+}
+
+.navbar .nav-item a{
   color: var(--primary);
-  cursor: pointer;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 var(--vsmall);
+  font-family: var(--font);
 }
 
-.nav-item-sec a {
-  margin: 20px;
-  text-decoration: none;
-  color: var(--primary);
+.navbar .nav-item a:hover {
+  color: #A7D397;
 }
 
-.nav-item-sec a:hover {
-  color: var(--button);
-}
 
-.material-symbols-outlined {
+.navbar .nav-icons {
   display: none;
 }
 
 .hero {
+  min-height: 100vh;
   display: flex;
-  box-sizing: border-box;
-  justify-content: center;
-  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  margin: auto;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/bg-interior.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
   text-align: center;
 }
-.text {
-  font-size: 48px;
-  color: var(--primary);
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
 }
-#text2 {
-  font-size: 22px;
-  margin-top: 20px;
-  margin-bottom: 25px;
+
+.hero .content h1 {
+  font-size: 3.5rem;
   color: var(--primary);
+  font-family: var(--font);
 }
-#btn {
-  text-decoration: none;
-  padding: 16px 32px;
+
+.hero .content p {
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-family: var(--font);
+  padding: 0 0 2rem;
+}
+
+.hero .content .btn {
+  font-family: var(--font);
+  padding: var(--small) var(--big);
   border: 1px solid var(--primary);
-  color: white;
-  border-radius: 45px;
+  color: var(--primary);
+  font-size: 1.2rem;
+  border-radius: 2.3rem;
+  -webkit-border-radius: 2.3rem;
+  -moz-border-radius: 2.3rem;
+  -ms-border-radius: 2.3rem;
+  -o-border-radius: 2.3rem;
 }
 
-@media screen and (max-width: 700px) {
-  .material-symbols-outlined {
-    display: flex;
-    cursor: pointer;
-    color: var(--primary);
-    position: fixed;
-    right: 22px;
-    top: 22px;
-    z-index: 2;
-  }
-  .nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    right: 20px;
-    top: 21px;
-    width: 200px;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    transform: translateX(100%);
-    transition: all 1s;
-    z-index: 1;
-  }
-  .nav-item a:hover {
-    color: var(--button);
-  }
-  .nav-item.menu {
-    transform: translateX(0);
-  }
+/* Media Query */
 
-  .nav-item-sec {
-    display: none;
-  }
+/* laptop */
 
-  .hero {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    margin: auto;
-  }
-  .text {
-    font-size: 38px;
-    color: var(--primary);
-  }
-  #text2 {
-    font-size: 18px;
-    color: var(--primary);
-  }
-  #btn {
-    text-decoration: none;
-    padding: 16px 32px;
-    border: 1px solid var(--primary);
-    color: white;
-    border-radius: 45px;
+@media (max-width: 1366px) {
+  html {
+    font-size: 86%;
   }
 }
 
-@media screen and (max-width: 500px) {
-  .material-symbols-outlined {
-    display: flex;
+/* Tablet */
+@media (max-width: 758px) {
+  html {
+    font-size: 80%;
+  }
+  .navbar .nav-icons {
+    display: inline-block;
+  }
+  .navbar .nav-icons #humberger-menu {
+    color: #fff;
+    border: none;
+    background-color: transparent;
     cursor: pointer;
-    color: var(--primary);
-    position: fixed;
-    right: 22px;
-    top: 22px;
-    z-index: 2;
   }
-  .nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .navbar .nav-item {
     position: absolute;
-    right: 20px;
-    top: 21px;
-    width: 200px;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    transform: translateX(100%);
-    transition: all 1s;
-    z-index: 1;
-  }
-  .nav-item a:hover {
-    color: var(--button);
-  }
-  .nav-item.menu {
-    transform: translateX(0);
-  }
-  .hero {
-    display: flex;
-    box-sizing: border-box;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    top: 100%;
+    right: -100%;
+    background-color: var(--primary);
+    width: 20rem;
     height: 100vh;
-    margin: auto;
   }
-  .text {
-    font-size: 32px;
-    color: var(--primary);
+  .navbar .nav-item.active {
+    right: 0;
   }
-  #text2 {
-    font-size: 16px;
-    color: var(--primary);
+  .navbar .nav-item a{
+    color: var(--bg);
+    align-items: center;
+    display: block;
+    width: 50%;
+    margin: 0.5rem 1rem 0;
+    font-size: 1.4rem;
+    padding: 0.5rem;
   }
-  #btn {
-    text-decoration: none;
-    padding: 16px 32px;
-    border: 1px solid var(--primary);
-    color: white;
-    border-radius: 45px;
+  .navbar .nav-item a:hover {
+    color: var(--button);
+    background-color: #A7D397;
+  }
+  .hero .content h1 {
+    font-size: 2.7rem;
+  }
+}
+
+/* Handphone */
+@media (max-width: 450px) {
+  html {
+    font-size: 69%;
   }
 }
