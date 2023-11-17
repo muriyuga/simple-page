@@ -15,12 +15,13 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  scroll-behavior: smooth;
 }
 
 body {
   width: 100%;
   background-color: var(--primary);
-  height: 4000px;
+  /* height: 4000px; */
 }
 
 .navbar {
@@ -108,7 +109,7 @@ body {
 
 .card-container {
   max-width: 100%;
-  height: 400px;
+  height: 35rem;
   display: flex;
   flex-wrap: wrap;
 }
@@ -123,6 +124,7 @@ body {
   flex-direction: column;
   flex: 1 1;
   position: relative;
+  box-sizing: border-box;
 }
 
 .card-container #favorites {
@@ -192,6 +194,10 @@ body {
   margin-top: 1rem;
 }
 
+.card-container .card #shoping-cart:hover {
+  background-color: #6d8d62;
+}
+
 .card-container .card .deskripsi-made {
   position: absolute;
   bottom: 0;
@@ -203,11 +209,13 @@ body {
   font-family: var(--font);
   font-weight: 500;
 }
+
 .card-container .card .deskripsi-made .harga-handmade {
   font-size: 1.2rem;
   font-family: var(--font);
   font-weight: bold;
 }
+
 .card-container .card #populer {
   color: var(--bg);
   font-family: var(--font);
@@ -215,17 +223,21 @@ body {
   background-color: var(--cummon);
   position: absolute;
   font-size: 1rem;
+  font-weight: 600;
 }
+
 .card-container .card .deskripsi-aromatic {
   position: absolute;
   bottom: 0;
   padding-bottom: 5%;
 }
+
 .card-container .card .deskripsi-aromatic .aromatic {
   font-size: 1.2rem;
   font-family: var(--font);
   font-weight: 500;
 }
+
 .card-container .card .deskripsi-aromatic .harga-aromatic {
   font-size: 1.2rem;
   font-family: var(--font);
@@ -266,6 +278,11 @@ body {
     background-color: var(--bg);
     width: 20rem;
     height: 100vh;
+    transition: all 0.7s;
+    -webkit-transition: all 0.7s;
+    -moz-transition: all 0.7s;
+    -ms-transition: all 0.7s;
+    -o-transition: all 0.7s;
   }
 
   .navbar .nav-item.active {
@@ -291,6 +308,13 @@ body {
     font-size: 2.7rem;
   }
 
+  .card-container {
+    max-width: 100%;
+    height: 35rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .card-container .card {
     min-width: 50%;
     height: 100%;
@@ -300,17 +324,18 @@ body {
     border: 1px solid rgba(129, 100, 150, 0.2);
     display: flex;
     flex-direction: column;
-    flex: 1 1;
+    flex: 2 1;
     position: relative;
+    box-sizing: border-box;
   }
-  
+
   .card-container #favorites {
     font-family: var(--font);
     font-weight: 400;
     font-size: 2rem;
     color: var(--bg);
   }
-  
+
   .card-container #desc {
     font-family: var(--font);
     font-size: 18px;
@@ -347,10 +372,12 @@ body {
     font-family: var(--font);
     font-weight: 500;
   }
+
   .card-container .card #harga-ceramic {
     font-weight: bold;
     font-size: 1.2rem;
   }
+
   .card-container .card #shoping-cart {
     border: none;
     font-size: 1.4rem;
@@ -362,21 +389,29 @@ body {
     color: var(--primary);
     margin-top: 1rem;
   }
+
+  .card-container .card #shoping-cart:hover {
+    background-color: #6d8d62;
+  }
+
   .card-container .card .deskripsi-made {
     position: absolute;
     bottom: 0;
     padding-bottom: 5%;
   }
+
   .card-container .card .deskripsi-made .handmade {
     font-size: 1.4rem;
     font-family: var(--font);
     font-weight: 500;
   }
+
   .card-container .card .deskripsi-made .harga-handmade {
     font-size: 1.2rem;
     font-family: var(--font);
     font-weight: bold;
   }
+
   .card-container .card #populer {
     color: var(--bg);
     font-family: var(--font);
@@ -384,17 +419,21 @@ body {
     background-color: var(--cummon);
     position: absolute;
     font-size: 1.2rem;
+    font-weight: 600;
   }
+
   .card-container .card .deskripsi-aromatic {
     position: absolute;
     bottom: 0;
     padding-bottom: 5%;
   }
+
   .card-container .card .deskripsi-aromatic .aromatic {
     font-size: 1.4rem;
     font-family: var(--font);
     font-weight: 500;
   }
+
   .card-container .card .deskripsi-aromatic .harga-aromatic {
     font-size: 1.2rem;
     font-family: var(--font);
@@ -406,5 +445,75 @@ body {
 @media (max-width: 550px) {
   html {
     font-size: 69%;
+  }
+
+  .card-container {
+    min-width: 1vw;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card-container .card {
+    min-width: 100%;
+    height: 500px;
+    padding: 1.5rem;
+    gap: 20px;
+    background-color: #fff;
+    border: 1px solid rgba(129, 100, 150, 0.2);
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    position: relative;
+  }
+
+  .card-container .card .card-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-container .card #see-all {
+    font-size: 1.5rem;
+  }
+
+  .card-container .card #new {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .card-container .card .deskripsi #ceramic {
+    font-size: 1.7rem;
+  }
+
+  .card-container .card .deskripsi #harga-ceramic {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .card-container .card .deskripsi-made .handmade {
+    font-size: 1.7rem;
+  }
+
+  .card-container .card .deskripsi-made .harga-handmade {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .card-container .card #shoping-cart:hover {
+    background-color: #6d8d62;
+  }
+
+  .card-container .card #populer {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .card-container .card .deskripsi-aromatic .aromatic {
+    font-size: 1.7rem;
+  }
+
+  .card-container .card .deskripsi-aromatic .harga-aromatic {
+    font-size: 1.5rem;
+    font-weight: bold;
   }
 }
